@@ -19,7 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Domains\Energy\" />
+    <Folder Include="Domains\Buying\" />
+    <Folder Include="Domains\TestReset\" />
+    <Folder Include="Domains\Orders\" />
   </ItemGroup>
 
 </Project>

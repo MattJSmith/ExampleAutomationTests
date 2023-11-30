@@ -7,7 +7,7 @@ namespace EnsekExample.Tests.SpecificFeature
         {
         }
 
-        [Test(Description = "Rest Test Data")]
+        [Test(Description = "Reset Test Data")]
         public void ResetTestData()
         {
             //Make api call to reset data

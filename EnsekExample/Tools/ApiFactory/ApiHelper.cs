@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Authenticators;
 
-namespace EnsekExample.ApiFactory
+namespace EnsekExample.Tools.ApiFactory
 {
     internal class ApiHelper
     {
@@ -17,11 +17,11 @@ namespace EnsekExample.ApiFactory
 
         public async Task<U?> SendGetRequest<U>(string apiCallName)
         {
-            return await ApiRequest<object,U>(apiCallName, Method.Get, null);
-         
+            return await ApiRequest<object, U>(apiCallName, Method.Get, null);
+
         }
 
-        public async Task<U?> SendPostRequest<T,U>(string apiCallName, T requestBody)
+        public async Task<U?> SendPostRequest<T, U>(string apiCallName, T requestBody)
         {
             return await ApiRequest<T, U>(apiCallName, Method.Post, requestBody);
         }
@@ -34,17 +34,17 @@ namespace EnsekExample.ApiFactory
             return await ApiRequest<T, U>(apiCallName, Method.Delete, requestBody);
         }
 
-        private async Task<U?> ApiRequest<T,U>(string apiCallName,Method method, T? requestBody)
-            {
-    
-                var client = new RestClient();
-                var request = new RestRequest(apiCallName, method);
-                if(requestBody != null) request.AddBody(requestBody,ContentType.Json);
+        private async Task<U?> ApiRequest<T, U>(string apiCallName, Method method, T? requestBody)
+        {
 
-                //Could use cancellation tokens to control timeouts
-                return await client.GetAsync<U>(request);
-                    
-            }
-            }
-      
+            var client = new RestClient();
+            var request = new RestRequest(apiCallName, method);
+            if (requestBody != null) request.AddBody(requestBody, ContentType.Json);
+
+            //Could use cancellation tokens to control timeouts
+            return await client.GetAsync<U>(request);
+
+        }
+    }
+
 }
