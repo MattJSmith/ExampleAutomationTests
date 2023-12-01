@@ -79,9 +79,9 @@ namespace EnsekExample.Tools.ApiFactory
         /// <typeparam name="U"></typeparam>
         /// <param name="apiCallName"></param>
         /// <returns>Nullable Generic</returns>
-        public async Task<(U? content, int status)> SendDeleteRequest<T, U>(string apiCallName, T requestBody)
+        public async Task<(U? content, int status)> SendDeleteRequest<U>(string apiCallName)
         {
-            return await ApiRequest<T, U?>(apiCallName, Method.Delete, requestBody);
+            return await ApiRequest<object, U?>(apiCallName, Method.Delete, null);
         }
 
         //Private Method to send any kind of http request using RestClient.
