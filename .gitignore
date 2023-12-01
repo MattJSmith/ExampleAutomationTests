@@ -1,0 +1,33 @@
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.userprefs
+*.vscode
+*.vssscc
+*_i.c
+*_p.c
+*.pidb
+*.log
+*.tlog
+*.cache
+*.sln.docstates
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore NuGet packages
+*.nuget.props
+*.nuget.targets
+packages/
+
+# Ignore test results
+TestResults/
+
+# Ignore miscellaneous files
+*.cache
+*.tmp
+*.temp
+*.csproj.user
+*.publishsettings
