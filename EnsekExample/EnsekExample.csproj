@@ -18,11 +18,4 @@
     <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Domains\Energy\" />
-    <Folder Include="Domains\Buying\" />
-    <Folder Include="Domains\TestReset\" />
-    <Folder Include="Domains\Orders\" />
-  </ItemGroup>
-
 </Project>
