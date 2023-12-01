@@ -10,11 +10,12 @@ namespace EnsekExample.Domains.Energy
     internal class EnergyHelper
     {
         private readonly ApiHelper apiHelper = new ApiHelper();
-        private EnergyResponse CachedEnergyResponse = new EnergyResponse();
+
+        private EnergyResponse? CachedEnergyResponse;
 
         internal async Task<IEnergyValues> GetEnergyInfo(string energyName)
         {
-            if (CachedEnergyResponse == default(EnergyResponse))
+            if (CachedEnergyResponse ==null)
             {
                 var response = (await apiHelper.SendGetRequest<EnergyResponse?>("energy"));
 

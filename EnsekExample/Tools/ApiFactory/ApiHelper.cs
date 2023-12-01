@@ -57,6 +57,17 @@ namespace EnsekExample.Tools.ApiFactory
         /// <typeparam name="U"></typeparam>
         /// <param name="apiCallName"></param>
         /// <returns>Nullable Generic</returns>
+        public async Task<(U? content, int status)> SendPutRequest<U>(string apiCallName)
+        {
+            return await ApiRequest<object,U?>(apiCallName, Method.Put, default);
+        }
+
+        /// <summary>
+        /// Send a HTTP Post Request. Returns data in the format of your choosing
+        /// </summary>
+        /// <typeparam name="U"></typeparam>
+        /// <param name="apiCallName"></param>
+        /// <returns>Nullable Generic</returns>
         public async Task<(U? content, int status)> SendPutRequest<T, U>(string apiCallName, T requestBody)
         {
             return await ApiRequest<T, U?>(apiCallName, Method.Put, requestBody);
